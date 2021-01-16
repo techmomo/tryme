@@ -1,0 +1,42 @@
+<div *ngIf="loginForm.status == 'INVALID' then displayError; else info">
+</div>
+<ng-template #displayError>
+    <div class="alert alert-danger">{{error}}</div>
+</ng-template>
+
+<ng-template #info>
+    <div class="alert alert-primary">USER LOGIN</div>
+</ng-template>
+
+<div class="mb-3 row">
+   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate class="col">
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" formControlName="username" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" formControlName="password" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="LOGIN" class="btn btn-primary "/>
+        </div>
+    </form>
+</div>
+
+<!-- </div>
+        <table>
+            
+            <tr>
+                <td>Username</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" formControlName="password"/></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+</form> -->

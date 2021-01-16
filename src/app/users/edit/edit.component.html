@@ -1,0 +1,22 @@
+<a href="users"><</a>
+<div *ngIf="user then records; else noRecords"></div>
+<ng-template #records>
+<table>
+    <tr>
+        <td> Id </td>
+        <td> {{user.id}}</td>
+    </tr>
+    <tr>
+        <td> Name </td>
+        <td> {{user.name}}</td>
+    </tr>
+    <tr>
+        <td> Email </td>
+        <td> {{user.email}}</td>
+    </tr>
+</table>
+</ng-template>
+
+<ng-template #noRecords>
+    Invalid or No User Specified
+</ng-template>
